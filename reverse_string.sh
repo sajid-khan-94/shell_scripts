@@ -1,6 +1,7 @@
 #!/bin/bash
-a=$1
-arr=()
-for i in $(seq $(( ${#a} - 1 )) -1 0);do  arr+=${a:i:1};done
-
-echo ${arr[*]}
+input="$1"
+result=""
+for (( i = ${#input} - 1; i >= 0; i-- )); do
+  result+=${input:$i:1}
+done
+echo "$result"
